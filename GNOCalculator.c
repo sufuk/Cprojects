@@ -4,13 +4,12 @@ int main() {
 
         float GANO = 0.00;
         float GNO = 0.00;
+        float points[999];
         
         int numoflessons;
         int akts[999];
         int i;
         int totalcredit = 0;
-        
-        float points[999];
         
         printf("Enter the Total Number of lessons \n ");
         scanf("%d", & numoflessons);
