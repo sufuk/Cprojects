@@ -17,10 +17,11 @@ printf("comparement of str4 and str5 is %d\n", my_strcmp(str4, str5));
 
 
 
+char str10[] = "izmit";
+char str11[] = "basiskele";
 
+my_strcpy(str10, str11);
 
-
-
-
+printf("%s \n", str10);
   return 0;
 }
