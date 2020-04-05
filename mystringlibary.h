@@ -1,3 +1,6 @@
+
+
+//My strlen
 int my_strlen(char name[]){
 
 
@@ -10,7 +13,7 @@ return m;
 }
 
 
-
+//my strcmp
 
 int my_strcmp(char str1[], char str2[]){
   int b = 0;
@@ -49,4 +52,43 @@ b = 1;
 
 }
 return b;
+}
+
+//my strcpy
+
+void my_strcpy(char str6[], char str7[]){
+
+
+  int v;
+  int c;
+  int l;
+   if((my_strlen(str6) >= my_strlen(str7)) && (my_strlen(str6) != 0)){
+
+  for(v = 0 ; str6[v] != '\0' ; v++){
+
+  str6[v] = str7[v];
+
+    }
+    }
+
+     if(my_strlen(str6) < my_strlen(str7)){
+
+  for(c = my_strlen(str7) ; c > -1 ; c--){
+
+  l = my_strlen(str7);
+  str6[l];
+
+  str6[c] = str7[c];
+
+
+  }
+
+
+
+
+
+  }
+
+
+
 }
