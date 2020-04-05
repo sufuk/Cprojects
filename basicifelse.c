@@ -2,6 +2,7 @@
 
 int main(){
 
+// some basic examples
 
 
 
@@ -29,7 +30,7 @@ else {
 
     printf("you re a bigger moron");
 
-    
+
 }
 
 
