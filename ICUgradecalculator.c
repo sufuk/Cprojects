@@ -1,11 +1,12 @@
 #include <stdio.h>
 
 
-/* 
+/*
 In this code vise effects %30
 an final %70
 
-
+this can not be used as an offical tool for ıstanbul commerce university
+your teacher probably gives grades differently
 
 */
 
@@ -81,7 +82,7 @@ else if(31 <= x && x < 36){
 
 
 else if(0 <= x && x <  31){
-    
+
     printf("\n FF \n");
 }
 
