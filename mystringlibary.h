@@ -170,3 +170,26 @@ str41[lenstr1 + n] = '\0';
 
 
 }
+
+
+
+void my_strncpy(char str1[], char str2[], int n){
+
+
+if(n >= my_strlen(str2)){
+
+my_strcpy(str1, str2);
+}
+
+else if(n < my_strlen(str2)){
+
+my_strcpy(str1, str2);
+
+str1[n] = '\0';
+
+}
+
+
+
+
+}

@@ -34,5 +34,12 @@ char strc[] = "sufuk";
 char strd[] = "erdem";
 my_strncat(strc, strd, 3);
 printf("\n%s", strc);
+
+
+char stru[] = "sufuk";
+char strj[] = "erdem";
+my_strncpy(stru, strj, 5);
+
+printf("\n%s", stru);
   return 0;
 }
