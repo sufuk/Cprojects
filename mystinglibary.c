@@ -23,5 +23,12 @@ char str11[] = "basiskele";
 my_strcpy(str10, str11);
 
 printf("%s \n", str10);
+
+
+
+char stra[] = "sufuk";
+char strb[] = "erdem";
+my_strcat(stra, strb);
+printf("\n %s", stra);
   return 0;
 }
