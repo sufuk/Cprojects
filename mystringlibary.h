@@ -94,7 +94,7 @@ void my_strcpy(char str6[], char str7[]){
 }
 
 
-
+// strcat
 void my_strcat(char str41[], char str42[]){
 
 
