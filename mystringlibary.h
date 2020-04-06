@@ -124,8 +124,8 @@ for(int i =lenstr1 ; i <z;i++){
     break;
   }
 }
-printf("%s", resultstr);
 
+strcpy(str41, resultstr);
 
 
 
