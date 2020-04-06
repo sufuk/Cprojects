@@ -125,7 +125,7 @@ for(int i =lenstr1 ; i <z;i++){
   }
 }
 
-strcpy(str41, resultstr);
+my_strcpy(str41, resultstr);
 
 
 
