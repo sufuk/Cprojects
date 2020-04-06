@@ -193,3 +193,103 @@ str1[n] = '\0';
 
 
 }
+
+
+
+
+int my_strncmp(char str1[], char str2[], int n){
+
+
+if(my_strlen(str1) == my_strlen(str2)){
+
+if(my_strcmp(str1, str2) == 0){
+  return my_strcmp(str1, str2);
+}
+else if(n > my_strlen(str1)){
+
+  return my_strcmp(str1, str2);
+}
+else if(n < my_strlen(str1)){
+
+  str1[n] = '\0';
+  str2[n] = '\0';
+  return my_strcmp(str1, str2);
+}
+else if((n ==  my_strlen(str1)) && my_strcmp(str1, str2) != 0){
+
+  return my_strcmp(str1, str2);
+}
+}
+
+//7///////////////////
+else if(my_strlen(str1) < my_strlen(str2)){
+
+
+if(n <= my_strlen(str1)){
+  str1[n] = '\0';
+  str2[n] = '\0';
+  return my_strcmp(str1, str2);
+
+}
+else if(my_strlen(str1) < n < my_strlen(str2)){
+
+str2[n] = '\0';
+
+return my_strcmp(str1, str2);
+
+}
+
+else if(n >= my_strlen(str2)){
+
+  return my_strcmp(str1, str2);
+
+}
+
+
+
+}
+
+/////////////////
+
+
+else if(my_strlen(str1) > my_strlen(str2)){
+
+
+if(n <= my_strlen(str2)){
+
+str1[n] = '\0';
+str2[n] = '\0';
+return my_strcmp(str1, str2);
+
+}
+else if(my_strlen(str2) < n < my_strlen(str1)){
+
+str1[n] = '\0';
+
+return my_strcmp(str1, str2);
+
+
+}
+
+else if(my_strlen(str1) <= n){
+
+return my_strcmp(str1, str2);
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+}
