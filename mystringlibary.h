@@ -92,3 +92,44 @@ void my_strcpy(char str6[], char str7[]){
 
 
 }
+
+
+
+void my_strcat(char str41[], char str42[]){
+
+
+int lenstr1;//y
+int z;
+int u;
+int o;
+int f;
+int lenstr2=my_strlen(str42);
+lenstr1 = my_strlen(str41);
+lenstr2 =  my_strlen(str42);
+z = lenstr1 + lenstr2;
+
+char resultstr[z];
+
+
+
+my_strcpy(resultstr, str41);
+
+
+int deneme=0;
+for(int i =lenstr1 ; i <z;i++){
+  resultstr[i]=str42[deneme];
+  deneme++;
+  if (deneme == lenstr2){
+    resultstr[z]='\0';
+    break;
+  }
+}
+printf("%s", resultstr);
+
+
+
+
+
+
+
+}
