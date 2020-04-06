@@ -1,6 +1,3 @@
-
-
-//My strlen
 int my_strlen(char name[]){
 
 
@@ -13,7 +10,7 @@ return m;
 }
 
 
-//my strcmp
+
 
 int my_strcmp(char str1[], char str2[]){
   int b = 0;
@@ -54,8 +51,6 @@ b = 1;
 return b;
 }
 
-//my strcpy
-
 void my_strcpy(char str6[], char str7[]){
 
 
@@ -94,18 +89,15 @@ void my_strcpy(char str6[], char str7[]){
 }
 
 
-// strcat
 void my_strcat(char str41[], char str42[]){
 
 
-int lenstr1;//y
+int lenstr1;
 int z;
-int u;
-int o;
-int f;
-int lenstr2=my_strlen(str42);
+int i;
+int lenstr2 = my_strlen(str42);
 lenstr1 = my_strlen(str41);
-lenstr2 =  my_strlen(str42);
+
 z = lenstr1 + lenstr2;
 
 char resultstr[z];
@@ -116,19 +108,64 @@ my_strcpy(resultstr, str41);
 
 
 int deneme=0;
-for(int i =lenstr1 ; i <z;i++){
-  resultstr[i]=str42[deneme];
+for(i = lenstr1 ; i < z ; i++){
+  resultstr[i] = str42[deneme];
   deneme++;
   if (deneme == lenstr2){
     resultstr[z]='\0';
     break;
   }
 }
-
 my_strcpy(str41, resultstr);
 
 
 
+
+
+
+
+}
+void my_strncat(char str41[], char str42[], int n){
+
+
+int lenstr1;
+int z;
+int i;
+int lenstr2 = my_strlen(str42);
+lenstr1 = my_strlen(str41);
+
+z = lenstr1 + n;
+
+char resultstr[z];
+
+
+
+
+my_strcpy(resultstr, str41);
+
+
+int deneme = 0;
+
+if(lenstr2 == n){
+
+  my_strcat(str41, str42);
+}
+
+else if(lenstr2 < n){
+
+  my_strcat(str41, str42);
+}
+
+
+
+else if(lenstr2 > n){
+
+my_strcat(str41, str42);
+
+
+str41[lenstr1 + n] = '\0';
+
+}
 
 
 
