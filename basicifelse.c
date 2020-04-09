@@ -3,7 +3,6 @@
 int main(){
 
 // some basic if else examples
-// and please dont get offended.
 
 
 
