@@ -13,7 +13,7 @@ pointA.y = 3.00;
 TDP_t pointB;
 pointB.x = -4.00;
 pointB.y = 0.00;
-
+//functions defined in the mystructdefinitions.h
 
 printf("%f", distancecalc(pointA, pointB));
 
