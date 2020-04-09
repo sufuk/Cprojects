@@ -2,14 +2,14 @@
 
 int main(){
 
-// some basic examples
+// some basic if else examples
+// and please dont get offended.
 
 
 
+printf("Doctow Who is the best sci-fi show ever.\n");
 
-printf("Doctow Who is the best sci-fi show ever\n");
-
-printf("if you agree type 1 ,disagree ytpe 2 and enter\n");
+printf("if you agree type 1 ,if disagree type 2 and enter\n");
 
 int x;
 scanf("%d",&x);
@@ -28,7 +28,7 @@ printf("you re moron \n");
 }
 else {
 
-    printf("you re a bigger moron");
+    printf("You re a bigger moron");
 
 
 }
