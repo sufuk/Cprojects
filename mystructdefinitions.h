@@ -1,3 +1,7 @@
+#include<math.h>
+
+//////////////////
+
 typedef struct twodimensionalpoint{
 
   double x;
@@ -19,3 +23,16 @@ return result;
 
 
 }
+///////////////////////////////////////////////////7
+
+int isequal(  TDP_t p1, TDP_t  p2)
+{
+    if (p1.x == p2.x && p1.y == p2.y){
+      return 1;
+
+    }
+    else{
+      return 0;
+    }
+}
+////////////////////////////777
