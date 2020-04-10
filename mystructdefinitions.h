@@ -36,3 +36,19 @@ int isequal(  TDP_t p1, TDP_t  p2)
     }
 }
 ////////////////////////////777
+
+
+
+typedef struct complex_number {
+    float real;
+    float img;
+} complex_n;
+
+
+
+complex_n sum(complex_n num1, complex_n num2) {
+    complex_n result;
+    result.real = num1.real + num2.real;
+    result.img = num1.img + num2.img;
+    return (result);
+}

@@ -28,7 +28,16 @@ printf("%d\n", isequal(pointa, pointc));
 ////////////////////////////////////////////
 
 
+float a = 1;
+float b = 1;
+float c = 2;
+float d = 2;
+complex_n mynum1= {a, b};
+complex_n mynum2= {c, d};
 
+complex_n resultsum = sum(mynum1, mynum2);
+
+printf("resultsum real = %f\nresultsum img = %f ", resultsum.real, resultsum.img);
 
 
 
