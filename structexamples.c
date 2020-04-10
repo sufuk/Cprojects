@@ -22,9 +22,8 @@ printf("distance betwwen pointA and pointb is %f\n", distancecalc(pointA, pointB
 TDP_t pointa = {1,2};
 TDP_t pointb = {1,2};
 TDP_t pointc = {1,2.00001};
-printf("%d\n", isequal(pointa,pointb));
-
-
+printf("%d\n", isequal(pointa, pointb));
+printf("%d\n", isequal(pointa, pointc));
 
 ////////////////////////////////////////////
 
