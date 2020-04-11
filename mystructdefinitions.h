@@ -2,22 +2,23 @@
 
 //////////////////
 
-typedef struct twodimensionalpoint{
+typedef struct threedimensionalpoint{
 
   double x;
   double y;
-
+  double z;
 }TDP_t;
 
 
 double distancecalc(TDP_t p1, TDP_t p2){
 
 
-  //((x0 - x1)^2 + (y0 - y1)^2)^1/2
+  //((x0 - x1)^2 + (y0 - y1)^2 + (z0 - z1)^2)^(1/2)
 
   double resultx = pow((p1.x - p2.x), 2);
   double resulty = pow((p1.y - p2.y), 2);
-  double result  = sqrt(resultx + resulty);
+  double resultz = pow((p1.z - p2.z), 2);
+  double result  = sqrt(resultx + resulty + resultz);
 
 return result;
 
@@ -27,7 +28,7 @@ return result;
 
 int isequal(  TDP_t p1, TDP_t  p2)
 {
-    if (p1.x == p2.x && p1.y == p2.y){
+    if (p1.x == p2.x && p1.y == p2.y && p1.z == p2.z ){
       return 1;
 
     }
@@ -53,13 +54,13 @@ complex_n sum(complex_n num1, complex_n num2) {
     return (result);
 }
 
+////////////////////////////////////7
 
-
-void movepoint(TDP_t *point1, double dx, double dy){
+void movepoint(TDP_t *point1, double dx, double dy, double dz){
 
   (*point1).x += dx;
   (*point1).y += dy;
-
+  (*point1).z += dz;
 
 
 }
