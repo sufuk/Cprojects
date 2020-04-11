@@ -52,3 +52,14 @@ complex_n sum(complex_n num1, complex_n num2) {
     result.img = num1.img + num2.img;
     return (result);
 }
+
+
+
+void movepoint(TDP_t *point1, double dx, double dy){
+
+  (*point1).x += dx;
+  (*point1).y += dy;
+
+
+
+}

@@ -37,7 +37,15 @@ complex_n mynum2= {c, d};
 
 complex_n resultsum = sum(mynum1, mynum2);
 
-printf("resultsum real = %f\nresultsum img = %f ", resultsum.real, resultsum.img);
+printf("resultsum real = %f\nresultsum img = %f \n", resultsum.real, resultsum.img);
+
+
+TDP_t mypointa = {5, 6};
+printf("mypointa x is %f mypointa y is %f\n", mypointa.x, mypointa.y);
+
+movepoint(&mypointa, 5, 4);
+printf("mypointa new x is %f and mypointa new y is %f\n", mypointa.x, mypointa.y);
+
 
 
 
