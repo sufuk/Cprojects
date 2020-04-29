@@ -20,7 +20,7 @@ void listcontact(){
 ///////////////
 
 
-int addcontact(FILE *file_pointer){
+void addcontact(FILE *file_pointer){
 
   file_pointer = fopen("Contacts.txt", "w");
   printf("Please enter the name of person\n");
@@ -30,6 +30,12 @@ int addcontact(FILE *file_pointer){
     gets(personname);
     fputs(personname, file_pointer);
 
+/*for( ; 0 < strlen(s) ; ){
+  gets(s);
+  fprintf(fileptr, "%s", s); // You can use either
+  fputs("\n", fileptr);      // fprintf or fputs
+  }
 
+*/
 }
 }
