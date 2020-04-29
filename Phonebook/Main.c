@@ -6,6 +6,8 @@
 
 int main(){
 
+FILE *fp1;
+
 
 printf("\nMENU\n");
 
