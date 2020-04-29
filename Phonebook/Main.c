@@ -21,7 +21,7 @@ scanf("%d", &a);
 
 if(a == 1){
 
-//List contcacts
+addcontact(fp1);
 
 
 
@@ -39,7 +39,7 @@ if(a == 2){
 //////////////////////7
 
 if(a == 3){
-addcontact(fp1);
+
 
 }
 ////////////////777
