@@ -30,12 +30,6 @@ void addcontact(FILE *file_pointer){
     gets(personname);
     fputs(personname, file_pointer);
 
-/*for( ; 0 < strlen(s) ; ){
-  gets(s);
-  fprintf(fileptr, "%s", s); // You can use either
-  fputs("\n", fileptr);      // fprintf or fputs
-  }
 
-*/
 }
 }
