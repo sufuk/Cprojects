@@ -13,8 +13,8 @@ int main(){
 
   for( ; 0 < strlen(s) ; ){
     gets(s);
-    fputs(s, fileptr);
-    fputs("\n", fileptr);
+    fprintf(fileptr, "%s", s); // You can use either
+    fputs("\n", fileptr);      // fprintf or fputs
     }
 
 

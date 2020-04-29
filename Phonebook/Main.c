@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-
+#include "PhonebookFunctions.h"
 
 
 
@@ -39,7 +39,7 @@ if(a == 2){
 //////////////////////7
 
 if(a == 3){
-
+addcontact(fp1);
 
 }
 ////////////////777
