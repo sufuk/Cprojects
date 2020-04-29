@@ -25,11 +25,9 @@ void addcontact(FILE *file_pointer){
   file_pointer = fopen("Contacts.txt", "w");
   printf("Please enter the name of person\n");
   char personname[99];
-  for(; 0 < strlen(personname) ;){
-
-    gets(personname);
-    fputs(personname, file_pointer);
-
-
-}
+  con mycontact;
+    scanf("%s", personname);
+    strcpy(mycontact.name, personname);
+    fputs(mycontact.name, file_pointer);
+    fclose(file_pointer);
 }
