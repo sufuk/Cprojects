@@ -10,7 +10,6 @@ int a;
 for(a ; a != 6 ; ){
   menu();
   scanf("%d", &a);
-
   if(a == 1){
 
 
