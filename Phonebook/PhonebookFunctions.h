@@ -2,7 +2,7 @@
 #include<stdio.h>
 #include<string.h>
 typedef struct contact{
-  char name[99];
+  char name[7];
   int number;
 }con;
 void menu(){
@@ -14,7 +14,7 @@ void menu(){
   printf("[5] To edit a Contact\n");
   printf("[6] Exit\n");
 }
-//               LIST CONTACTS
+//               LIST CONTACTS  
 void listcontact(FILE *file_pointer){
   con person2;
   file_pointer = fopen("Contacts.txt", "r");
