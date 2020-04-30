@@ -38,7 +38,7 @@ void addcontact(FILE *file_pointer){
   printf("\nPlease enter the phone number of person\n");
   scanf("%d", &person1.number);
   fwrite(&person1, sizeof(con), 1, file_pointer);
-  fputs("\n", file_pointer);
+  
   fclose(file_pointer);
 }
 //           SEARCH CONTACT
