@@ -7,22 +7,15 @@
 int main(){
 
 FILE *fp1;
-
-
-printf("\nMENU\n");
-
-printf("[1] List Contacts\n");
-printf("[2] Search a Contact\n");
-printf("[3] Add a Contact\n");
-printf("[4] Remove a Contact\n");
-
 int a;
-scanf("%d", &a);
+for(a ; a != 5 ; ){
+  menu();
+  scanf("%d", &a);
 
-if(a == 1){
+  if(a == 1){
 
 
-
+    listcontact(fp1);
 
 
 
@@ -32,19 +25,20 @@ if(a == 1){
 }
 //////////////
 
-if(a == 2){
+  if(a == 2){
 
 
 }
 //////////////////////7
 
-if(a == 3){
+  if(a == 3){
 
-addcontact(fp1);
+    addcontact(fp1);
+
 }
 ////////////////777
 
-if(a == 4){
+  if(a == 4){
 
 
 
@@ -53,7 +47,7 @@ if(a == 4){
 ///////////////////7777777
 
 
-
+}
 
 
 
