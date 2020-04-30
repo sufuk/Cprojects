@@ -41,9 +41,23 @@ void addcontact(FILE *file_pointer){
 }
 
 void searchcontact(FILE *file_pointer){
-  
+  con person2;
+  file_pointer = fopen("Contacts.txt", "r");
+  printf("\nEnter the contac's name please\n");
+  char personname[50];
+  scanf("%s", personname);
+  printf("\n Contacts named %s are:\n", personname);
+  while(!feof(file_pointer)){
+    if(!fread(&person2, sizeof(con), 1, file_pointer)){
+      break;
+    }
+    if(strcmp(person2.name, personname) == 0){
+      printf("%s  %d", person2.name, person2.number);
+      printf("\n");
+    }
+  }
 
-
+  fclose(file_pointer);
 
 
 }
