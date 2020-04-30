@@ -32,6 +32,7 @@ void addcontact(FILE *file_pointer){
   scanf("%s", personname);
   strcpy(mycontact.name, personname);
   fputs(mycontact.name, file_pointer);
+  fputc("\n", filepointer);
   printf("\nPlease enter the phone number of person\n");
   scanf("%s", personnumber);
   strcpy(mycontact.number, personnumber);
