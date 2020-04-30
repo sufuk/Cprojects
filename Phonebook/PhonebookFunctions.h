@@ -61,5 +61,5 @@ void searchcontact(FILE *file_pointer){
 }
 //         EDIT CONTACT
 void editcontact(FILE *file_pointer){
-  
+
 }

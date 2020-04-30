@@ -36,73 +36,11 @@ for(a ;  a !=6  ; ){
 
       break;
 
-
         default:
-            printf("Error! operator is not correct");
+            printf("ERROR try again");
+            break;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*  if(a == 1){
-
-
-    listcontact(fp1);
-
-
-
-
-
-
 }
-//////////////
-
-  if(a == 2){
-    searchcontact(fp1);
-
-}
-//////////////////////7
-
-  if(a == 3){
-
-    addcontact(fp1);
-
-}
-////////////////777
-
-  if(a == 4){
-
-
-
-}
-
-///////////////////7777777
-
-
-if(a == 5){
-
-
-
-}
-
-
-
-
-*/
-}
-
-
 
   return 0;
 }
