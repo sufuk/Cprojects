@@ -25,11 +25,14 @@ void menu(){
 ////////////////////
 
 void listcontact(FILE *file_pointer){
-  con person1;
+  con person2;
   file_pointer = fopen("Contacts.txt", "r");
-  fread(&person1, sizeof(con), 1, file_pointer);
-  printf("%s  %d", person1.name, person1.number);
-  fclose(file_pointer);
+  while(!feof(file_pointer)){
+    fread(&person2, sizeof(con), 1, file_pointer);
+    printf("%s  %d", person2.name, person2.number);
+    printf("\n");
+  }
+    fclose(file_pointer);
 
 
 
@@ -48,7 +51,7 @@ void addcontact(FILE *file_pointer){
   printf("\nPlease enter the phone number of person\n");
   scanf("%d", &person1.number);
   fwrite(&person1, sizeof(con), 1, file_pointer);
-  fputs("\n", file_pointer);
+  //fputs("\n", file_pointer);
   fclose(file_pointer);
 
 
