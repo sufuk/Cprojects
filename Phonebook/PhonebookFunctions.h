@@ -39,3 +39,11 @@ void addcontact(FILE *file_pointer){
   fwrite(&person1, sizeof(con), 1, file_pointer);
   fclose(file_pointer);
 }
+
+void searchcontact(FILE *file_pointer){
+  
+
+
+
+
+}
