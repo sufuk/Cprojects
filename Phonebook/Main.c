@@ -52,9 +52,7 @@ if(a == 5){
 
 }
 
-else{
-  printf("Try again please");
-}
+
 
 }
 
