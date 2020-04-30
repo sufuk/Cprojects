@@ -7,10 +7,55 @@
 int main(){
 FILE *fp1;
 int a;
-for(a ; a != 6 ; ){
+for(a ;  a !=6  ; ){
   menu();
   scanf("%d", &a);
-  if(a == 1){
+  switch(a)
+  {
+    case 1:
+      listcontact(fp1);
+      break;
+
+    case 2:
+      searchcontact(fp1);
+      break;
+
+    case 3:
+      addcontact(fp1);
+      break;
+
+    case 4:
+
+      break;
+
+    case 5:
+
+      break;
+
+    case 6:
+
+      break;
+
+
+        default:
+            printf("Error! operator is not correct");
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  if(a == 1){
 
 
     listcontact(fp1);
@@ -53,9 +98,9 @@ if(a == 5){
 
 
 
+
+*/
 }
-
-
 
 
 
