@@ -11,7 +11,8 @@ void menu(){
   printf("[2] Search a Contact\n");
   printf("[3] Add a Contact\n");
   printf("[4] Remove a Contact\n");
-  printf("[5] Exit\n");
+  printf("[5] To edit a Contact\n");
+  printf("[6] Exit\n");
 }
 //               LIST CONTACTS
 void listcontact(FILE *file_pointer){
@@ -39,11 +40,11 @@ void addcontact(FILE *file_pointer){
   fwrite(&person1, sizeof(con), 1, file_pointer);
   fclose(file_pointer);
 }
-
+//           SEARCH CONTACT
 void searchcontact(FILE *file_pointer){
   con person2;
   file_pointer = fopen("Contacts.txt", "r");
-  printf("\nEnter the contac's name please\n");
+  printf("\nEnter the contact's name please\n");
   char personname[50];
   scanf("%s", personname);
   printf("\n Contacts named %s are:\n", personname);
@@ -56,8 +57,10 @@ void searchcontact(FILE *file_pointer){
       printf("\n");
     }
   }
-
   fclose(file_pointer);
+}
+//         EDIT CONTACT
+void editcontact(FILE *file_pointer){
 
 
 }

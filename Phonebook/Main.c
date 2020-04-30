@@ -7,7 +7,7 @@
 int main(){
 FILE *fp1;
 int a;
-for(a ; a != 5 ; ){
+for(a ; a != 6 ; ){
   menu();
   scanf("%d", &a);
 
@@ -45,6 +45,16 @@ for(a ; a != 5 ; ){
 
 ///////////////////7777777
 
+
+if(a == 5){
+
+
+
+}
+
+else{
+  printf("Try again please");
+}
 
 }
 
