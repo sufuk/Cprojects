@@ -3,7 +3,7 @@
 #include<string.h>
 typedef struct contact{
   char name[99];
-  char number[50];
+  int number;
 
 
 }con;
@@ -22,43 +22,35 @@ void menu(){
 
 
 
-
 ////////////////////
 
 void listcontact(FILE *file_pointer){
-
+  con person1;
   file_pointer = fopen("Contacts.txt", "r");
-  char c;
-  for(c ; file_pointer != NULL && c != EOF ;){
-    c = fgetc(file_pointer);
-    printf("%c", c);
-
-  }
-
+  fread(&person1, sizeof(con), 1, file_pointer);
+  printf("%s  %d", person1.name, person1.number);
   fclose(file_pointer);
+
+
 
 }
 
-///////////////
+//////////////
 
 
 void addcontact(FILE *file_pointer){
-
+  con person1;
   file_pointer = fopen("Contacts.txt", "a");
   printf("\nPlease enter the name of person\n");
-
   char personname[99];
-  char personnumber[50];
-  con mycontact;
-
   scanf("%s", personname);
-  strcpy(mycontact.name, personname);
-  fputs(mycontact.name, file_pointer);
-  fputs("  ", file_pointer);
+  strcpy(person1.name, personname);
   printf("\nPlease enter the phone number of person\n");
-  scanf("%s", personnumber);
-  strcpy(mycontact.number, personnumber);
-  fputs(mycontact.number, file_pointer);
+  scanf("%d", &person1.number);
+  fwrite(&person1, sizeof(con), 1, file_pointer);
   fputs("\n", file_pointer);
   fclose(file_pointer);
+
+
+
 }

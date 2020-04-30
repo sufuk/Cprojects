@@ -5,7 +5,6 @@
 
 
 int main(){
-
 FILE *fp1;
 int a;
 for(a ; a != 5 ; ){
