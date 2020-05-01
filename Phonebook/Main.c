@@ -25,7 +25,7 @@ for(a ;  a !=6  ; ){
       break;
 
     case 4:
-
+      deletecontact(fp1);
       break;
 
     case 5:

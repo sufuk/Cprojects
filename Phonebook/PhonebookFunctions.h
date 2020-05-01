@@ -134,3 +134,25 @@ printf("\nEnter the name of contact please\n");
     }
     fclose(file_pointer);
 }
+//            DELETE CONTACT
+void deletecontact(FILE *file_pointer){
+  con person;
+  printf("\n Please enter the name of contact you wanna delete \n");
+  char personname[15];
+  scanf("%s", personname);
+  FILE *tmpf;
+  tmpf = fopen("tmp.txt", "w");
+  file_pointer = fopen("Contacts.txt", "r");
+  while(fread(&person, sizeof(con), 1, file_pointer)==1)
+       {
+           if(strcmp(person.name, personname) != 0){
+               fwrite(&person, sizeof(con), 1, tmpf);
+                }
+       }
+       fclose(file_pointer);
+       fclose(tmpf);
+       remove("Contacts.txt");
+       rename("tmp.txt","Contacts.txt");
+       printf("Contact deleted sucsessfully\n");
+
+}
