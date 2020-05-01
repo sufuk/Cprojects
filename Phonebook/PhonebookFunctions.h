@@ -87,7 +87,7 @@ void submenuedit(){
   printf("\n[3] to exit\n");
 }
 void editcontact(FILE *file_pointer){
-  printf("\nEnter the name of contact please\n");
+printf("\nEnter the name of contact please\n");
   char personname[15];
   char newname[15];
   char newnumber[15];
@@ -95,7 +95,7 @@ void editcontact(FILE *file_pointer){
   con person;
   int i;
   int a;
-  file_pointer = fopen("Contacts.txt", "r");
+  file_pointer = fopen("Contacts.txt", "rb+");
   while(!feof(file_pointer)){
     if(!fread(&person, sizeof(con), 1, file_pointer)){
       break;
@@ -105,7 +105,7 @@ void editcontact(FILE *file_pointer){
         break;
       }
       }
-    fclose(file_pointer);
+  //  fclose(file_pointer);
     if(i != 0){
       printf("\nContact not found try again \n");
     }
@@ -118,7 +118,7 @@ void editcontact(FILE *file_pointer){
           printf("\n Enter the new name please\n");
           scanf("%s", newname);
           strcpy(person.name, newname);
-          printf("Name changed sucsessfully\n");
+          printf("Name changed succesfully!\n");
         }
         if(a == 2){
           printf("\n Enter the new number please\n");
@@ -126,6 +126,11 @@ void editcontact(FILE *file_pointer){
           strcpy(person.number, newnumber);
           printf("Number updated sucsessfully\n");
         }
+
       }
+      fseek(file_pointer, -sizeof(person), SEEK_CUR);
+      fwrite(&person, sizeof(con), 1, file_pointer);
+
     }
+    fclose(file_pointer);
 }
