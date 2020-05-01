@@ -24,7 +24,7 @@ void menu(){
 //               LIST CONTACTS
 void listcontact(FILE *file_pointer){
   con person;
-  file_pointer = fopen("Contacts.txt", "rb");
+  file_pointer = fopen("Contacts.bin", "rb");
   while(!feof(file_pointer)){
     if(!fread(&person, sizeof(con), 1, file_pointer)){
       break;
@@ -42,7 +42,7 @@ void addcontact(FILE *file_pointer){
   con person;
   int i = 1;
   scanf("%s", personname);
-  file_pointer = fopen("Contacts.txt", "rb");
+  file_pointer = fopen("Contacts.bin", "rb");
   while(!feof(file_pointer)){
     if(!fread(&person, sizeof(con), 1, file_pointer)){
       break;
@@ -56,7 +56,7 @@ void addcontact(FILE *file_pointer){
       printf("\nPerson already exists try again\n");
     }
     if(i != 0){
-      file_pointer = fopen("Contacts.txt", "ab");
+      file_pointer = fopen("Contacts.bin", "ab");
       strcpy(person.name, personname);
       printf("\nPlease enter the phone number of person\n");
       scanf("%s", personnumber);
@@ -70,7 +70,7 @@ void addcontact(FILE *file_pointer){
 //           SEARCH CONTACT
 void searchcontact(FILE *file_pointer){
   con person;
-  file_pointer = fopen("Contacts.txt", "rb");
+  file_pointer = fopen("Contacts.bin", "rb");
   printf("\nEnter the contact's name please\n");
   char personname[10];
   scanf("%s", personname);
@@ -101,7 +101,7 @@ printf("\nEnter the name of contact please\n");
   con person;
   int i;
   int a;
-  file_pointer = fopen("Contacts.txt", "rb+");
+  file_pointer = fopen("Contacts.bin", "rb+");
   while(!feof(file_pointer)){
     if(!fread(&person, sizeof(con), 1, file_pointer)){
       break;
@@ -146,8 +146,8 @@ void deletecontact(FILE *file_pointer){
   char personname[10];
   scanf("%s", personname);
   FILE *tmpf;
-  tmpf = fopen("tmp.txt", "wb");
-  file_pointer = fopen("Contacts.txt", "rb");
+  tmpf = fopen("tmp.bin", "wb");
+  file_pointer = fopen("Contacts.bin", "rb");
   while(fread(&person, sizeof(con), 1, file_pointer)==1)
        {
            if(strcmp(person.name, personname) != 0){
@@ -156,8 +156,8 @@ void deletecontact(FILE *file_pointer){
        }
        fclose(file_pointer);
        fclose(tmpf);
-       remove("Contacts.txt");
-       rename("tmp.txt", "Contacts.txt");
+       remove("Contacts.bin");
+       rename("tmp.bin", "Contacts.bin");
        printf("Contact deleted sucsessfully\n");
 
 }
