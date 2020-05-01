@@ -55,7 +55,8 @@ void addcontact(FILE *file_pointer){
       scanf("%s", personnumber);
       strcpy(person.number, personnumber);
       fwrite(&person, sizeof(con), 1, file_pointer);
-    //  fputs("\n", file_pointer);
+    //  fputs("\n", file_pointer); // if I use this program will write contacts one for each line
+    // but it is also make program useless. Makes crashes reading problems etc. 
       fclose(file_pointer);
     }
 }
