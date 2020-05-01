@@ -17,7 +17,7 @@ void menu(){
 //               LIST CONTACTS
 void listcontact(FILE *file_pointer){
   con person;
-  file_pointer = fopen("Contacts.txt", "r");
+  file_pointer = fopen("Contacts.txt", "rb");
   while(!feof(file_pointer)){
     if(!fread(&person, sizeof(con), 1, file_pointer)){
       break;
@@ -35,24 +35,21 @@ void addcontact(FILE *file_pointer){
   con person;
   int i = 1;
   scanf("%s", personname);
-  file_pointer = fopen("Contacts.txt", "r");
+  file_pointer = fopen("Contacts.txt", "rb");
   while(!feof(file_pointer)){
     if(!fread(&person, sizeof(con), 1, file_pointer)){
       break;
     }
-
       if(strcmp(person.name, personname) == 0){
         i = 0;
       }
-
       }
-
     fclose(file_pointer);
     if(i == 0){
       printf("\nPerson already exists try again\n");
     }
     if(i != 0){
-      file_pointer = fopen("Contacts.txt", "a");
+      file_pointer = fopen("Contacts.txt", "ab");
       strcpy(person.name, personname);
       printf("\nPlease enter the phone number of person\n");
       scanf("%s", personnumber);
@@ -65,7 +62,7 @@ void addcontact(FILE *file_pointer){
 //           SEARCH CONTACT
 void searchcontact(FILE *file_pointer){
   con person;
-  file_pointer = fopen("Contacts.txt", "r");
+  file_pointer = fopen("Contacts.txt", "rb");
   printf("\nEnter the contact's name please\n");
   char personname[10];
   scanf("%s", personname);
@@ -141,8 +138,8 @@ void deletecontact(FILE *file_pointer){
   char personname[10];
   scanf("%s", personname);
   FILE *tmpf;
-  tmpf = fopen("tmp.txt", "w");
-  file_pointer = fopen("Contacts.txt", "r");
+  tmpf = fopen("tmp.txt", "wb");
+  file_pointer = fopen("Contacts.txt", "rb");
   while(fread(&person, sizeof(con), 1, file_pointer)==1)
        {
            if(strcmp(person.name, personname) != 0){
