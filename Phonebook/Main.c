@@ -29,7 +29,7 @@ for(a ;  a !=6  ; ){
       break;
 
     case 5:
-
+      editcontact(fp1);
       break;
 
     case 6:
