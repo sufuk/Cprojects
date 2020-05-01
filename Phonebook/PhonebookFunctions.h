@@ -31,7 +31,7 @@ void listcontact(FILE *file_pointer){
 void addcontact(FILE *file_pointer){
   printf("\nPlease enter the name of person\n");
   char personname[10];
-  char personnumber[99];
+  char personnumber[15];
   con person;
   int i = 1;
   scanf("%s", personname);
@@ -67,7 +67,7 @@ void searchcontact(FILE *file_pointer){
   con person;
   file_pointer = fopen("Contacts.txt", "r");
   printf("\nEnter the contact's name please\n");
-  char personname[50];
+  char personname[10];
   scanf("%s", personname);
   printf("\n Contacts named %s are:\n", personname);
   while(!feof(file_pointer)){
@@ -89,8 +89,8 @@ void submenuedit(){
 }
 void editcontact(FILE *file_pointer){
 printf("\nEnter the name of contact please\n");
-  char personname[15];
-  char newname[15];
+  char personname[10];
+  char newname[10];
   char newnumber[15];
   scanf("%s", personname);
   con person;
@@ -138,7 +138,7 @@ printf("\nEnter the name of contact please\n");
 void deletecontact(FILE *file_pointer){
   con person;
   printf("\n Please enter the name of contact you wanna delete \n");
-  char personname[15];
+  char personname[10];
   scanf("%s", personname);
   FILE *tmpf;
   tmpf = fopen("tmp.txt", "w");
@@ -152,7 +152,7 @@ void deletecontact(FILE *file_pointer){
        fclose(file_pointer);
        fclose(tmpf);
        remove("Contacts.txt");
-       rename("tmp.txt","Contacts.txt");
+       rename("tmp.txt", "Contacts.txt");
        printf("Contact deleted sucsessfully\n");
 
 }
