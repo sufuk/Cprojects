@@ -16,13 +16,13 @@ void menu(){
 }
 //               LIST CONTACTS
 void listcontact(FILE *file_pointer){
-  con person2;
+  con person;
   file_pointer = fopen("Contacts.txt", "r");
   while(!feof(file_pointer)){
-    if(!fread(&person2, sizeof(con), 1, file_pointer)){
+    if(!fread(&person, sizeof(con), 1, file_pointer)){
       break;
     }
-    printf("%s  %s", person2.name, person2.number);
+    printf("%s  %s", person.name, person.number);
     printf("\n");
   }
     fclose(file_pointer);
@@ -32,16 +32,16 @@ void addcontact(FILE *file_pointer){
   printf("\nPlease enter the name of person\n");
   char personname[10];
   char personnumber[99];
-  con person2;
+  con person;
   int i = 1;
   scanf("%s", personname);
   file_pointer = fopen("Contacts.txt", "r");
   while(!feof(file_pointer)){
-    if(!fread(&person2, sizeof(con), 1, file_pointer)){
+    if(!fread(&person, sizeof(con), 1, file_pointer)){
       break;
     }
 
-      if(strcmp(person2.name, personname) == 0){
+      if(strcmp(person.name, personname) == 0){
         i = 0;
       }
 
@@ -53,28 +53,28 @@ void addcontact(FILE *file_pointer){
     }
     if(i != 0){
       file_pointer = fopen("Contacts.txt", "a");
-      strcpy(person2.name, personname);
+      strcpy(person.name, personname);
       printf("\nPlease enter the phone number of person\n");
       scanf("%s", personnumber);
-      strcpy(person2.number, personnumber);
-      fwrite(&person2, sizeof(con), 1, file_pointer);
+      strcpy(person.number, personnumber);
+      fwrite(&person, sizeof(con), 1, file_pointer);
       fclose(file_pointer);
     }
 }
 //           SEARCH CONTACT
 void searchcontact(FILE *file_pointer){
-  con person2;
+  con person;
   file_pointer = fopen("Contacts.txt", "r");
   printf("\nEnter the contact's name please\n");
   char personname[50];
   scanf("%s", personname);
   printf("\n Contacts named %s are:\n", personname);
   while(!feof(file_pointer)){
-    if(!fread(&person2, sizeof(con), 1, file_pointer)){
+    if(!fread(&person, sizeof(con), 1, file_pointer)){
       break;
     }
-    if(strcmp(person2.name, personname) == 0){
-      printf("%s  %s", person2.name, person2.number);
+    if(strcmp(person.name, personname) == 0){
+      printf("%s  %s", person.name, person.number);
       printf("\n");
     }
   }
@@ -82,5 +82,6 @@ void searchcontact(FILE *file_pointer){
 }
 //         EDIT CONTACT
 void editcontact(FILE *file_pointer){
+  printf("\nEnter the name of contact please\n");
 
 }
