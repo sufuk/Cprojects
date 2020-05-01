@@ -58,6 +58,7 @@ void addcontact(FILE *file_pointer){
       scanf("%s", personnumber);
       strcpy(person.number, personnumber);
       fwrite(&person, sizeof(con), 1, file_pointer);
+    //  fputs("\n", file_pointer);
       fclose(file_pointer);
     }
 }
@@ -105,7 +106,6 @@ printf("\nEnter the name of contact please\n");
         break;
       }
       }
-  //  fclose(file_pointer);
     if(i != 0){
       printf("\nContact not found try again \n");
     }
