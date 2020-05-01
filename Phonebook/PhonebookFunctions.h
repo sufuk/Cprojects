@@ -29,18 +29,37 @@ void listcontact(FILE *file_pointer){
 }
 //               ADD CONTACT
 void addcontact(FILE *file_pointer){
-  con person1;
-  file_pointer = fopen("Contacts.txt", "a");
   printf("\nPlease enter the name of person\n");
-  char personname[99];
-  scanf("%s", personname);
-  strcpy(person1.name, personname);
-  printf("\nPlease enter the phone number of person\n");
+  char personname[10];
   char personnumber[99];
-  scanf("%s", personnumber);
-  strcpy(person1.number, personnumber);
-  fwrite(&person1, sizeof(con), 1, file_pointer);
-  fclose(file_pointer);
+  con person2;
+  int i = 1;
+  scanf("%s", personname);
+  file_pointer = fopen("Contacts.txt", "r");
+  while(!feof(file_pointer)){
+    if(!fread(&person2, sizeof(con), 1, file_pointer)){
+      break;
+    }
+
+      if(strcmp(person2.name, personname) == 0){
+        i = 0;
+      }
+
+      }
+
+    fclose(file_pointer);
+    if(i == 0){
+      printf("\nPerson already exists try again\n");
+    }
+    if(i != 0){
+      file_pointer = fopen("Contacts.txt", "a");
+      strcpy(person2.name, personname);
+      printf("\nPlease enter the phone number of person\n");
+      scanf("%s", personnumber);
+      strcpy(person2.number, personnumber);
+      fwrite(&person2, sizeof(con), 1, file_pointer);
+      fclose(file_pointer);
+    }
 }
 //           SEARCH CONTACT
 void searchcontact(FILE *file_pointer){
