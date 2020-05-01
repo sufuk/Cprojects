@@ -2,8 +2,8 @@
 #include<stdio.h>
 #include<string.h>
 typedef struct contact{
-  char name[7];
-  int number;
+  char name[10];
+  char number[15];
 }con;
 void menu(){
   printf("\nMENU\n");
@@ -14,7 +14,7 @@ void menu(){
   printf("[5] To edit a Contact\n");
   printf("[6] Exit\n");
 }
-//               LIST CONTACTS  
+//               LIST CONTACTS
 void listcontact(FILE *file_pointer){
   con person2;
   file_pointer = fopen("Contacts.txt", "r");
@@ -22,7 +22,7 @@ void listcontact(FILE *file_pointer){
     if(!fread(&person2, sizeof(con), 1, file_pointer)){
       break;
     }
-    printf("%s  %d", person2.name, person2.number);
+    printf("%s  %s", person2.name, person2.number);
     printf("\n");
   }
     fclose(file_pointer);
@@ -36,7 +36,9 @@ void addcontact(FILE *file_pointer){
   scanf("%s", personname);
   strcpy(person1.name, personname);
   printf("\nPlease enter the phone number of person\n");
-  scanf("%d", &person1.number);
+  char personnumber[99];
+  scanf("%s", personnumber);
+  strcpy(person1.number, personnumber);
   fwrite(&person1, sizeof(con), 1, file_pointer);
   fclose(file_pointer);
 }
@@ -53,7 +55,7 @@ void searchcontact(FILE *file_pointer){
       break;
     }
     if(strcmp(person2.name, personname) == 0){
-      printf("%s  %d", person2.name, person2.number);
+      printf("%s  %s", person2.name, person2.number);
       printf("\n");
     }
   }
