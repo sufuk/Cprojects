@@ -1,3 +1,10 @@
+/* you can see coding progress on my
+ github repo : https://github.com/sufuk/Cprojects
+
+Semih Ufuk Güler
+200011674
+EEE #2
+*/
 
 #include<stdio.h>
 #include<string.h>
@@ -56,7 +63,7 @@ void addcontact(FILE *file_pointer){
       strcpy(person.number, personnumber);
       fwrite(&person, sizeof(con), 1, file_pointer);
     //  fputs("\n", file_pointer); // if I use this program will write contacts one for each line
-    // but it is also make program useless. Makes crashes reading problems etc. 
+    // but it is also make program useless. Makes crashes reading problems etc.
       fclose(file_pointer);
     }
 }

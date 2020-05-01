@@ -2,6 +2,13 @@
 #include <string.h>
 #include "PhonebookFunctions.h"
 
+/*you can see coding progress on my
+ github repo : https://github.com/sufuk/Cprojects
+
+Semih Ufuk Güler
+200011674
+EEE #2
+*/
 
 
 int main(){
