@@ -1,21 +1,18 @@
 #include<stdio.h>
 
+#define AA 4.00
+#define BA 3.75
+#define BB 3.5
+#define CB 3.0
+#define CC 2.5
+#define CD 2.0
+#define DD 1.5
+#define DF 1.0
+#define FF 0.0
 int main() {
 
 
-  /*
-  Please type your grade like;
-  AA = 4.00
-  BA = 3.75
-  BB = 3.5
-  CB = 3.0
-  CC = 2.5
-  CD = 2.0
-  DD = 1.5
-  DF = 1.0
-  FF = 0.0
 
-*/
 
 
 
