@@ -42,8 +42,7 @@ my_recipe2.machine_speed = 20;
 
 FILE *file;
 
-write_struct(my_recipe1, file);
-write_struct(my_recipe2, file);
+
 
 engine(file);
 

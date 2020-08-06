@@ -117,7 +117,7 @@ void add_recipe(FILE *file){
       strcpy(frecipe.partyname, party_name);
       printf("\nPlease enter the party type of recipe\n");
       scanf("%s", party_type);
-      strcpy(frecipe.partytype, party_name);
+      strcpy(frecipe.partytype, party_type);
       printf("\nPlease enter the Wire Number\n");
       scanf("%d", &wire_number);
       frecipe.wirenumber = wire_number;
@@ -148,6 +148,9 @@ void add_recipe(FILE *file){
       scanf("%lf", &tub2_elangationrate);
       frecipe.tub2elangationrate = tub2_elangationrate;
       fwrite(&frecipe, sizeof(recipe), 1, file);
+      printf("\nPlease enter the Machine Speed \n");
+      scanf("%d", &_machine_speed);
+      frecipe.machine_speed = _machine_speed;
       fclose(file);
     }
     fclose(file);
@@ -177,10 +180,141 @@ void clean_all(FILE *file){ //TODO
   file = fopen("output", "w");
   fclose(file);
 }
+void submenuedit(){
+  printf("\n[1] for changing Party Name");
+  printf("\n[2] for changing Party Type");
+  printf("\n[3] for changing Wire Number");
+  printf("\n[4] for changing iplikaskthat");
+  printf("\n[5] for changing Yarn Type");
+  printf("\n[6] for changing Tub 1 Tension");
+  printf("\n[7] for changing Tub 1 Temprature");
+  printf("\n[8] for changing Tub 1 Elangation");
+  printf("\n[9] for changing Tub 2 Tension");
+  printf("\n[10] for changing Tub 2 Temprature");
+  printf("\n[11] for changing Tub 2 Elangaiton");
+  printf("\n[12] for changing Machine Speed");
+  printf("\n[13] to exit\n");
+}
+void edit_recipe(FILE *file){
+printf("\nEnter the name of recipe please\n");
+  char party_name[20];
+  char party_name_new[20];
+  char party_type_new[20];
+  int  wire_number_new;
+  char iplikask_that_new[20];
+  char yarn_type_new[20];
+  int  tub1_tension_new;
+  int  tub1_temprature_new;
+  double  tub1_elangationrate_new;
+  int  tub2_tension_new;
+  int  tub2_temprature_new;
+  double  tub2_elangationrate_new;
+  int _machine_speed_new;
+  scanf("%s", party_name);
+  recipe frecipe;
+  int i;
+  int a;
+  file = fopen("output", "rb+");
+  while(!feof(file)){
+    if(!fread(&frecipe, sizeof(recipe), 1, file)){
+      break;
+    }
+      if(strcmp(frecipe.partyname, party_name) == 0){
+        i = 0;
+        break;
+      }
+      }
+    if(i != 0){
+      printf("\nRecipe could not found try again \n");
+    }
+    if(i == 0){
+      printf("You are editing %s\n ", frecipe.partyname);
+      while(a != 13){
+        submenuedit();
+        scanf("%d", &a);
+        if(a == 1){
+          printf("\n Enter the new Party Name please\n");
+          scanf("%s", party_name_new);
+          strcpy(frecipe.partyname, party_name_new);
+          printf("Party Name changed succesfully!\n");
+        }
+        if(a == 2){
+          printf("\n Enter the new party type please\n");
+          scanf("%s", party_type_new);
+          strcpy(frecipe.partytype, party_type_new);
+          printf("Party Type updated sucsessfully\n");
+        }
+        if(a == 3){
+          printf("\n Enter the new Wire Number please\n");
+          scanf("%d", wire_number_new);
+          frecipe.wirenumber = wire_number_new;
+          printf("Wire Number updated sucsessfully\n");
+        }
+        if(a == 4){
+          printf("Please Enter The new iplikaskthat Please\n");
+          scanf("%s", iplikask_that_new);
+          strcpy(frecipe.iplikaskthat, iplikask_that_new);
+          printf("iplikaskthat updated sucsessfully\n");
+        }
+        if(a == 5){
+          printf("Please Enter The new Yarn Type Please\n");
+          scanf("%s", yarn_type_new);
+          strcpy(frecipe.yarntype, yarn_type_new);
+          printf("Yarn type updated sucsessfully\n");
+        }
+        if(a == 6){
+          printf("\n Enter the new Tub 1 Tension please\n");
+          scanf("%d", tub1_tension_new);
+          frecipe.tub1tension = tub1_tension_new;
+          printf("Tub 1 Tension updated sucsessfully\n");
+        }
+        if(a == 7){
+          printf("\n Enter the new Tub 1 Temprature please\n");
+          scanf("%d", tub1_temprature_new);
+          frecipe.tub1temprature = tub1_temprature_new;
+          printf("Tub 1 Temprature updated sucsessfully\n");
+        }
+        if(a == 8){
+          printf("\n Enter the new Tub 1 Elangaiton Rate please\n");
+          scanf("%lf", tub1_elangationrate_new);
+          frecipe.tub1elangationrate = tub1_elangationrate_new;
+          printf("Tub 1 Elangaiton Rate updated sucsessfully\n");
+        }
+        if(a == 9){
+          printf("\n Enter the new Tub 2 Tension please\n");
+          scanf("%d", tub2_tension_new);
+          frecipe.tub2tension = tub2_tension_new;
+          printf("Tub 2 Tension updated sucsessfully\n");
+        }
+        if(a == 10){
+          printf("\n Enter the new Tub 2 Temprature please\n");
+          scanf("%d", tub2_temprature_new);
+          frecipe.tub2temprature = tub2_temprature_new;
+          printf("Tub 2 Temprature updated sucsessfully\n");
+        }
+        if(a == 11){
+          printf("\n Enter the new Tub 2 Elangaiton Rate please\n");
+          scanf("%lf", tub2_elangationrate_new);
+          frecipe.tub2elangationrate = tub2_elangationrate_new;
+          printf("Tub 2 Elangaiton Rate updated sucsessfully\n");
+        }
+        if(a == 12){
+          printf("\n Enter the new Machine Speed please\n");
+          scanf("%d", _machine_speed_new);
+          frecipe.machine_speed = _machine_speed_new;
+          printf("Machine Speed updated sucsessfully\n");
+        }
+      }
+      fseek(file, -sizeof(recipe), SEEK_CUR);
+      fwrite(&frecipe, sizeof(recipe), 1, file);
+
+    }
+    fclose(file);
+}
 
 void engine(FILE *file){
   int i = 0;
-  for(i != 7 ; ;){
+  while(i != 6){
     menu();
     printf("Please Select a function\n");
     scanf("%d", &i);
@@ -202,11 +336,9 @@ void engine(FILE *file){
     }
     else if(i == 5){
       //Edit a Recipe
+      edit_recipe(file);
     }
     else if(i == 6){
-      //Clean Al !!!
-    }
-    else if(i == 7){
       printf("\nGoodbye");
     }
     else{
