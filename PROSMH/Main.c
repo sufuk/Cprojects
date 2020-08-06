@@ -26,7 +26,7 @@ recipe my_recipe2;
 
 
 strcpy(my_recipe2.partyname, "Cigdem");
-strcpy(my_recipe2.partytype, "Sucker");
+strcpy(my_recipe2.partytype, "Mehler");
 my_recipe2.wirenumber = 10;
 strcpy(my_recipe2.iplikaskthat, "3/5");
 strcpy(my_recipe2.yarntype, "Coton");
@@ -43,9 +43,8 @@ my_recipe2.machine_speed = 20;
 FILE *file;
 
 write_struct(my_recipe1, file);
-//print_struct(my_recipe1, file);
 write_struct(my_recipe2, file);
-//print_struct(my_recipe2, file);
+
 engine(file);
 
 
