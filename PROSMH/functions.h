@@ -43,7 +43,8 @@ void menu(){
   printf("[3] Add a Recipe\n");
   printf("[4] Remove a Recipe\n");
   printf("[5] Edit a Recipe\n");
-  printf("[6] Exit\n");
+  printf("[6] Clean ALL!!!\n");
+  printf("[7] Exit\n");
 }
 
 void list_recipes(FILE *file){
@@ -149,11 +150,37 @@ void add_recipe(FILE *file){
       fwrite(&frecipe, sizeof(recipe), 1, file);
       fclose(file);
     }
+    fclose(file);
+}
+void remove_recipe(FILE *file){
+  recipe frecipe;
+  printf("\n Please enter the name of recipe you wanna delete \n");
+  char party_name[10];
+  scanf("%s", party_name);
+  FILE *tmpf;
+  tmpf = fopen("tmp", "wb");
+  file = fopen("output", "rb");
+  while(fread(&frecipe, sizeof(recipe), 1, file)==1)
+       {
+           if(strcmp(frecipe.partyname, party_name) != 0){
+               fwrite(&frecipe, sizeof(recipe), 1, tmpf);
+                }
+       }
+       fclose(file);
+       fclose(tmpf);
+       remove("output");
+       rename("tmp", "output");
+       printf("recipe removed sucsessfully\n");
+
+}
+void clean_all(FILE *file){ //TODO
+  file = fopen("output", "w");
+  fclose(file);
 }
 
 void engine(FILE *file){
   int i = 0;
-  for(i != 6 ; ;){
+  for(i != 7 ; ;){
     menu();
     printf("Please Select a function\n");
     scanf("%d", &i);
@@ -171,11 +198,15 @@ void engine(FILE *file){
     }
     else if(i == 4){
       //Remove a Recipe
+      remove_recipe(file);
     }
     else if(i == 5){
       //Edit a Recipe
     }
     else if(i == 6){
+      //Clean Al !!!
+    }
+    else if(i == 7){
       printf("\nGoodbye");
     }
     else{
