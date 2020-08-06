@@ -17,7 +17,7 @@ typedef struct recipe {
   int machine_speed;
 }recipe;
 void write_struct(recipe frecipe, FILE *file){
-  file= fopen("output", "wb");
+  file= fopen("output", "ab");
   if(file != NULL){
     fwrite(&frecipe, sizeof(struct recipe), 1, file);
     fclose(file);
@@ -46,10 +46,22 @@ void menu(){
   printf("[5] Edit a Recipe\n");
   printf("[6] Exit\n");
 }
-void list_recipes(recipe frecipe, FILE *file){
-  fread(&frecipe, sizeof(struct recipe), 1, file);
+
+void list_recipes(FILE *file){
+  recipe frecipe;
+  file = fopen("output", "rb");
+  int a = 1;
+  while(!feof(file)){
+    if(!fread(&frecipe, sizeof(recipe), 1, file)){
+      break;
+    }
+    printf("[%d]  %s", a, frecipe.partyname);
+    printf("\n");
+    a++;
+  }
+    fclose(file);
 }
-void engine(){
+void engine(FILE *file){
   int i = 0;
   for(i != 6 ; ;){
     menu();
@@ -57,6 +69,7 @@ void engine(){
     scanf("%d", &i);
     if(i == 1){
       //List Recipes
+      list_recipes(file);
     }
     else if(i == 2){
       //Search a Recipe

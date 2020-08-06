@@ -46,8 +46,8 @@ write_struct(my_recipe1, file);
 //print_struct(my_recipe1, file);
 write_struct(my_recipe2, file);
 //print_struct(my_recipe2, file);
+engine(file);
 
-list_recipes();
 
   return 0;
 }
