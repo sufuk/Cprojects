@@ -18,7 +18,7 @@ typedef struct recipe {
   int machine_speed;
 }recipe;
 void write_struct(recipe frecipe, FILE *file){
-  file= fopen("output", "ab");
+  file= fopen("output.bin", "ab");
   if(file != NULL){
     fwrite(&frecipe, sizeof(struct recipe), 1, file);
     fclose(file);
@@ -49,7 +49,7 @@ void menu(){
 
 void list_recipes(FILE *file){
   recipe frecipe;
-  file = fopen("output", "rb");
+  file = fopen("output.bin", "rb");
   int a = 1;
   while(!feof(file)){
     if(!fread(&frecipe, sizeof(recipe), 1, file)){
@@ -63,7 +63,7 @@ void list_recipes(FILE *file){
 }
 void search_recipe(FILE *file){
   recipe frecipe;
-  file = fopen("output", "rb");
+  file = fopen("output.bin", "rb");
   printf("\nEnter the Recipe's name please\n");
   char recipename[10];
   scanf("%s", recipename);
@@ -99,7 +99,7 @@ void add_recipe(FILE *file){
   recipe frecipe;
   int i = 1;
   scanf("%s", party_name);
-  file = fopen("output", "rb");
+  file = fopen("output.bin", "rb");
   while(!feof(file)){
     if(!fread(&frecipe, sizeof(recipe), 1, file)){
       break;
@@ -113,7 +113,7 @@ void add_recipe(FILE *file){
       printf("\nRecipe name already exists try again\n");
     }
     if(i != 0){
-      file = fopen("output", "ab");
+      file = fopen("output.bin", "ab");
       strcpy(frecipe.partyname, party_name);
       printf("\nPlease enter the party type of recipe\n");
       scanf("%s", party_type);
@@ -162,7 +162,7 @@ void remove_recipe(FILE *file){
   scanf("%s", party_name);
   FILE *tmpf;
   tmpf = fopen("tmp", "wb");
-  file = fopen("output", "rb");
+  file = fopen("output.bin", "rb");
   while(fread(&frecipe, sizeof(recipe), 1, file)==1)
        {
            if(strcmp(frecipe.partyname, party_name) != 0){
@@ -171,13 +171,13 @@ void remove_recipe(FILE *file){
        }
        fclose(file);
        fclose(tmpf);
-       remove("output");
-       rename("tmp", "output");
+       remove("output.bin");
+       rename("tmp", "output.bin");
        printf("recipe removed sucsessfully\n");
 
 }
 void clean_all(FILE *file){ //TODO
-  file = fopen("output", "w");
+  file = fopen("output.bin", "w");
   fclose(file);
 }
 void submenuedit(){
@@ -214,7 +214,7 @@ printf("\nEnter the name of recipe please\n");
   recipe frecipe;
   int i;
   int a;
-  file = fopen("output", "rb+");
+  file = fopen("output.bin", "rb+");
   while(!feof(file)){
     if(!fread(&frecipe, sizeof(recipe), 1, file)){
       break;
