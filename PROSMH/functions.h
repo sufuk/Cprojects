@@ -4,7 +4,7 @@ typedef struct recipe {
   char partyname[20];
   char partytype[20];
   int wirenumber;
-  char iplikaskthat[20];
+  char yarnNE[20];
   char yarntype[20];
 
   int tub1tension;
@@ -26,8 +26,8 @@ void write_struct(recipe frecipe, FILE *file){
 }
 
 void print_struct(recipe frecipe, FILE *file){
-  printf ("Party Name -> %s \nParty Type -> %s\nWire Number -> %d\nIplikaskthat -> %s\nYarn Type -> %s\n", frecipe.partyname,
-  frecipe.partytype, frecipe.wirenumber, frecipe.iplikaskthat, frecipe.yarntype);
+  printf ("Party Name -> %s \nParty Type -> %s\nWire Number -> %d\nyarnNE -> %s\nYarn Type -> %s\n", frecipe.partyname,
+  frecipe.partytype, frecipe.wirenumber, frecipe.yarnNE, frecipe.yarntype);
   printf("Tub 1 Tension -> %d\nTub 1 Temprature -> %d\nTube 1 Elangation Rate -> %lf\n", frecipe.tub1tension,
   frecipe.tub1temprature, frecipe.tub1elangationrate );
   printf("Tub 2 Tension -> %d\nTub 2 Temprature -> %d\nTube 2 Elangation Rate -> %lf\n", frecipe.tub2tension,
@@ -121,9 +121,9 @@ void add_recipe(FILE *file){
       printf("\nPlease enter the Wire Number\n");
       scanf("%d", &wire_number);
       frecipe.wirenumber = wire_number;
-      printf("\nPlease enter the iplikaskthat of recipe\n");
+      printf("\nPlease enter the yarnNE of recipe\n");
       scanf("%s", iplikask_that);
-      strcpy(frecipe.iplikaskthat, iplikask_that);
+      strcpy(frecipe.yarnNE, iplikask_that);
       printf("\nPlease enter the yarn type of recipe\n");
       scanf("%s", yarn_type);
       strcpy(frecipe.yarntype, yarn_type);
@@ -184,7 +184,7 @@ void submenuedit(){
   printf("\n[1] for changing Party Name");
   printf("\n[2] for changing Party Type");
   printf("\n[3] for changing Wire Number");
-  printf("\n[4] for changing iplikaskthat");
+  printf("\n[4] for changing yarnNE");
   printf("\n[5] for changing Yarn Type");
   printf("\n[6] for changing Tub 1 Tension");
   printf("\n[7] for changing Tub 1 Temprature");
@@ -251,10 +251,10 @@ printf("\nEnter the name of recipe please\n");
           printf("Wire Number updated sucsessfully\n");
         }
         if(a == 4){
-          printf("Please Enter The new iplikaskthat Please\n");
+          printf("Please Enter The new yarnNE Please\n");
           scanf("%s", iplikask_that_new);
-          strcpy(frecipe.iplikaskthat, iplikask_that_new);
-          printf("iplikaskthat updated sucsessfully\n");
+          strcpy(frecipe.yarnNE, iplikask_that_new);
+          printf("yarnNE updated sucsessfully\n");
         }
         if(a == 5){
           printf("Please Enter The new Yarn Type Please\n");
