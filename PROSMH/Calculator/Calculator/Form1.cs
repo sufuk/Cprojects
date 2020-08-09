@@ -19,9 +19,11 @@ namespace Calculator
         int i, j;
         int result;
         int min1;
+        
         public Form1()
         {
             InitializeComponent();
+           
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -55,6 +57,7 @@ namespace Calculator
             {
                 sum1 = Convert.ToInt32(textBox1.Text);
                 i = 1;
+                textBox1.Text = null;
             }
             else if(textBox1.Text == null)
             {
@@ -70,7 +73,7 @@ namespace Calculator
             {
                 min1 = Convert.ToInt32(textBox1.Text);
                 j = 1;
-            }
+                textBox1.Text = null;            }
             else if(textBox1.Text == null)
             {
                 min1 = 0;
@@ -80,7 +83,6 @@ namespace Calculator
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void button2_Click(object sender, EventArgs e)
