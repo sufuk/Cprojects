@@ -61,12 +61,13 @@ void list_recipes(FILE *file){
   }
     fclose(file);
 }
-void search_recipe(FILE *file){
+int search_recipe(FILE *file, char recipename[]){
   recipe frecipe;
+  int a;
   file = fopen("output.bin", "rb");
-  printf("\nEnter the Recipe's name please\n");
-  char recipename[10];
-  scanf("%s", recipename);
+//  printf("\nEnter the Recipe's name please\n");
+  //char recipename[10];
+  //scanf("%s", recipename);
   printf("\n Recipe named %s is:\n", recipename);
   while(!feof(file)){
     if(!fread(&frecipe, sizeof(recipe), 1, file)){
@@ -75,7 +76,12 @@ void search_recipe(FILE *file){
     if(strcmp(frecipe.partyname, recipename) == 0){
       print_struct(frecipe, file);
       printf("\n");
+      a = 1;
     }
+    else{
+      a = 0;
+    }
+    return a;
   }
   fclose(file);
 }
