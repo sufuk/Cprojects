@@ -447,7 +447,8 @@ void engine(FILE *file){
 
       }
       if(p == 2){// start Simulation
-
+        simulationscreen(_machine_speed, tub1_temprature);
+        
       }
       else if(p == 3){
 

@@ -382,7 +382,7 @@ void simtemp_machinespeed(int temprature, int machinespeed){
       printf("             /                          \n");
       printf("           30                  160      \n");
     }
-    else if(machinespeed <=40){
+    else if(machinespeed <= 40){
       printf("                  90    100                             _________\n");
       printf("             80              110                        |       |\n");
       printf("                                                        |       |\n");
@@ -391,15 +391,15 @@ void simtemp_machinespeed(int temprature, int machinespeed){
       printf("       60                          130                  |       |\n");
       printf("                     OO                                 |       |\n");
       printf("       50            OO           140                   |       |\n");
-      printf("                   %                                    |       |\n");
-      printf("                %                                       |_______|\n");
-      printf("           40                    150     \n");
-      printf("                                        \n");
-      printf("              30             160      \n");
+      printf("                  %%                                     |       |\n");
+      printf("               %%                                        |_______|\n");
+      printf("           40                    150                             \n");
+      printf("                                                                 \n");
+      printf("              30             160                                 \n");
     }
     else if(machinespeed <= 50){
-      printf("                  90    100                               _________        \n");
-      printf("             80              110                          |       |      \n");
+      printf("                  90    100                               _________ \n");
+      printf("             80              110                          |       | \n");
       printf("                                                          |       |     \n");
       printf("         70                      120                      |       |   \n");
       printf("                                                          |       |   \n");
@@ -443,8 +443,7 @@ void simtemp_machinespeed(int temprature, int machinespeed){
 }
 void simulationscreen(int machinespeed, int temprature){
 
-  temprature_bar(temprature);
-  machinespeed_bar(90);
+  simtemp_machinespeed(temprature, machinespeed);
 
 
 
