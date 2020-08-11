@@ -13,283 +13,350 @@ void delay(int number_of_seconds)
     while (clock() < start_time + milli_seconds)
         ;
 }
-void machinespeed_bar(int machinespeed){
-  if(machinespeed <= 0){
 
-    printf("          o  o\n");
-    printf("       o        o\n");
-    printf("      o          o\n");
-    printf("      o          o\n");
-    printf("       o        o\n");
-    printf("          o  o\n");
+void machinespeed_bar0(){
+  printf("                  90    100             \n");
+  printf("             80              110        \n");
+  printf("                                        \n");
+  printf("         70                      120    \n");
+  printf("                                        \n");
+  printf("       60                          130  \n");
+  printf("                      OO                \n");
+  printf("       50             OO          140   \n");
+  printf("                      |                 \n");
+  printf("        40            |          150    \n");
+  printf("                      |                 \n");
+  printf("           30         |        160      \n");
+}
+void machinespeed_bar30(){
+  printf("                  90    100             \n");
+  printf("             80              110        \n");
+  printf("                                        \n");
+  printf("         70                      120    \n");
+  printf("                                        \n");
+  printf("       60                          130  \n");
+  printf("                     OO                 \n");
+  printf("       50            OO           140   \n");
+  printf("                   /                    \n");
+  printf("                 /                      \n");
+  printf("        40     /                 150    \n");
+  printf("             /                          \n");
+  printf("           30                  160      \n");
+}
+void machinespeed_bar40(){
+  printf("                  90    100             \n");
+  printf("             80              110        \n");
+  printf("                                        \n");
+  printf("         70                      120    \n");
+  printf("                                        \n");
+  printf("       60                          130  \n");
+  printf("                     OO                 \n");
+  printf("       50            OO           140   \n");
+  printf("                   %                    \n");
+  printf("                %                       \n");
+  printf("           40                    150     \n");
+  printf("                                        \n");
+  printf("              30             160      \n");
+}
+void machinespeed_bar50(){
+  printf("                  90    100             \n");
+  printf("             80              110        \n");
+  printf("                                        \n");
+  printf("         70                      120    \n");
+  printf("                                        \n");
+  printf("       60                          130  \n");
+  printf("                      OO                \n");
+  printf("       50+++++++++++++OO          140   \n");
+  printf("                                        \n");
+  printf("        40                       150    \n");
+  printf("                                        \n");
+  printf("           30                  160      \n");
+}
+void machinespeed_bar60(){
+  printf("                  90    100             \n");
+  printf("             80              110        \n");
+  printf("                                        \n");
+  printf("         70                      120    \n");
+  printf("                                        \n");
+  printf("       60                          130  \n");
+  printf("           #                            \n");
+  printf("               ^   _                    \n");
+  printf("                     %OO                \n");
+  printf("       50             OO          140   \n");
+  printf("                                        \n");
+  printf("        40                       150    \n");
+  printf("                                        \n");
+  printf("           30                  160      \n");
+}
+void machinespeed_bar70(){
+  printf("                  90    100             \n");
+  printf("             80              110        \n");
+  printf("                                        \n");
+  printf("         70                      120    \n");
+  printf("            ^                           \n");
+  printf("       60     ^                    130  \n");
+  printf("                ^                       \n");
+  printf("                  ^                     \n");
+  printf("                    ^ OO                \n");
+  printf("       50             OO          140   \n");
+  printf("                                        \n");
+  printf("        40                       150    \n");
+  printf("                                        \n");
+  printf("           30                  160      \n");
+}
+void machinespeed_bar80(){
+  printf("                  90    100             \n");
+  printf("             80              110        \n");
+  printf("               ^                        \n");
+  printf("         70     ^                120    \n");
+  printf("                 ^                      \n");
+  printf("       60         ^                130  \n");
+  printf("                   ^                    \n");
+  printf("                    ^                   \n");
+  printf("                      OO                \n");
+  printf("       50             OO          140   \n");
+  printf("                                        \n");
+  printf("        40                       150    \n");
+  printf("                                        \n");
+  printf("           30                  160      \n");
+}
+void machinespeed_bar90(){
+  printf("                  90    100             \n");
+  printf("             80   |         110         \n");
+  printf("         70        |            120     \n");
+  printf("                    |                   \n");
+  printf("       60            |              130 \n");
+  printf("                      |                 \n");
+  printf("                       |                \n");
+  printf("                      OO                \n");
+  printf("       50             OO          140   \n");
+  printf("                                        \n");
+  printf("        40                       150    \n");
+  printf("                                        \n");
+  printf("           30                  160      \n");
+}
+void machinespeed_bar100(){
+  printf("                  90    100             \n");
+  printf("             80           |  110        \n");
+  printf("         70              |       120    \n");
+  printf("       60               |          130  \n");
+  printf("                       |                \n");
+  printf("                      OO                \n");
+  printf("       50             OO          140   \n");
+  printf("                                        \n");
+  printf("        40                       150    \n");
+  printf("                                        \n");
+  printf("           30                  160      \n");
+}
 
-    delay(7);
+void machinespeed_bar(int speed){
+  if(speed <= 0){
+    machinespeed_bar0();
   }
-  else if(machinespeed <= 50){
-    printf("          o  o\n");
-    printf("       o        o\n");
-    printf("      o          o\n");
-    printf("      o          o\n");
-    printf("       o        o\n");
-    printf("          o  o\n");
-    delay(7);
-    printf("        *  *\n");
-    printf("     *        *\n");
-    printf("    *          *\n");
-    printf("    *          *\n");
-    printf("     *        *\n");
-    printf("        *  *\n");
-    delay(7);
-    printf("          o  o\n");
-    printf("       o        o\n");
-    printf("      o          o\n");
-    printf("      o          o\n");
-    printf("       o        o\n");
-    printf("          o  o\n");
+  else if(speed <= 30){
+    machinespeed_bar30();
   }
-  else if(machinespeed <= 70){
-
-    printf("          o  o\n");
-    printf("       o        o\n");
-    printf("      o          o\n");
-    printf("      o          o\n");
-    printf("       o        o\n");
-    printf("          o  o\n");
-    delay(5);
-    printf("        *  *\n");
-    printf("     *        *\n");
-    printf("    *          *\n");
-    printf("    *          *\n");
-    printf("     *        *\n");
-    printf("        *  *\n");
-    delay(5);
-    printf("          o  o\n");
-    printf("       o        o\n");
-    printf("      o          o\n");
-    printf("      o          o\n");
-    printf("       o        o\n");
-    printf("          o  o\n");
+  else if(speed <= 40){
+    machinespeed_bar40();
   }
-    else if(machinespeed <= 100){
-      printf("          o  o\n");
-      printf("       o        o\n");
-      printf("      o          o\n");
-      printf("      o          o\n");
-      printf("       o        o\n");
-      printf("          o  o\n");
-      delay(3);
-      printf("        *  *\n");
-      printf("     *        *\n");
-      printf("    *          *\n");
-      printf("    *          *\n");
-      printf("     *        *\n");
-      printf("        *  *\n");
-      delay(3);
-      printf("          o  o\n");
-      printf("       o        o\n");
-      printf("      o          o\n");
-      printf("      o          o\n");
-      printf("       o        o\n");
-      printf("          o  o\n");
-    }
+  else if(speed <= 50){
+    machinespeed_bar50();
+  }
+  else if(speed <= 60){
+    machinespeed_bar60();
+  }
+  else if(speed <= 70){
+    machinespeed_bar70();
+  }
+  else if(speed <= 80){
+    machinespeed_bar80();
+  }
+  else if(speed <= 90){
+    machinespeed_bar90();
+  }
+  else if(speed <= 100){
+    machinespeed_bar100();
+  }
+}
+void temprature_bar0(){
+  printf("  _________\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |_______|\n");
+}
+void temprature_bar10(){
+  printf("  _________\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |#######|\n");
+}
 
+void temprature_bar20(){
+  printf("  _________\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+}
+
+void temprature_bar30(){
+  printf("  _________\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+}
+
+void temprature_bar40(){
+  printf("  _________\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+}
+void temprature_bar50(){
+  printf("  _________\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+}
+void temprature_bar60(){
+  printf("  _________\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+}
+void temprature_bar70(){
+  printf("  _________\n");
+  printf("  |       |\n");
+  printf("  |       |\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+}
+void temprature_bar80(){
+  printf("  _________\n");
+  printf("  |       |\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+}
+void temprature_bar90(){
+  printf("  _________\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+}
+void temprature_bar100(){
+  printf("  _#######_\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
+  printf("  |#######|\n");
 }
 void temprature_bar(int temprature){
   if(temprature < 0){//Below the thermos
-    printf("  _________\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |_______|\n");
+    temprature_bar0;
   }
   else if(temprature < 10){//Little higher
-    printf("  _________\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |#######|\n");
+    temprature_bar10;
 
   }
   else if(temprature < 20){//Little higher
-    printf("  _________\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
+    temprature_bar20();
 
   }
   else if(temprature < 30){//Little higher
-    printf("  _________\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
+    temprature_bar30();
 
   }
   else if(temprature < 40){//Little higher
-    printf("  _________\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
+    temprature_bar40();
   }
   else if(temprature < 50){//Little higher
-    printf("  _________\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
+    temprature_bar50();
   }
   else if(temprature < 60){//Little higher
-    printf("  _________\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
+    temprature_bar60();
   }
   else if(temprature < 70){//Little higher
-    printf("  _________\n");
-    printf("  |       |\n");
-    printf("  |       |\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
+    temprature_bar70();
   }
   else if(temprature < 80){//Little higher
-    printf("  _________\n");
-    printf("  |       |\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
+    temprature_bar80();
   }
   else if(temprature < 90){//Little higher
-    printf("  _________\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
+    temprature_bar90();
   }
   else if(temprature < 100){//Little higher
-    printf("  _#######_\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
-    printf("  |#######|\n");
+    temprature_bar100();
   }
 }
+void simulationscreen(int machinespeed, int temprature){
+
+  temprature_bar(temprature);
 
 
-/*
 
-void mainmenu(FILE *file){
-while(1){
-  char recipename[20];
-  char simname[20];
-  printf("________________RECIPE__SIMULATOR_____________");
-  printf("\n\n");
-  printf("[1]List Recipes\n");
-  printf("[2]Select A Recipe\n");
-  printf("[3]Start Simulation\n");
-  int x, y;
-  scanf("%d", &x);
-  if(x == 1){
-  //  list_recipes(file);
-  }
-  else if(x == 2){
-    printf("please enter the recipe party name\n");
-    scanf("%s", recipename);
-    recipe frecipe;
-    file = fopen("output.bin", "rb");
-    printf("\n Recipe named %s is:\n", recipename);
-    while(!feof(file)){
-      if(!fread(&frecipe, sizeof(recipe), 1, file)){
-        break;
-      }
-      if(strcmp(frecipe.partyname, recipename) == 0){
-        //print_struct(frecipe, file);
-        //temprature_bar(frecipe.tub1temprature);
-        a = 1;
-        printf("\n");
-      }
-    }
-    if(y == 1){//  Select the recipe
-      a = 1;
-    }
-    else if(y == 0){
-      printf("Try Again\n");
-      a = 0;
-    }
-  fclose(file);
-  }
-   if(x == 3){//Simulation
-    if(a == 1){// Simulation Start
-      int i = 1;
-      while(i == 1){
 
-        }
-    }
-    else if(a == 0){//Select Recipe Again
-      printf("Please Select Recipe Again\n");
-    }
-    else{
-      printf("!! System ERROR\n\n");
-    }
 
-  }
-  }
 }
-*/

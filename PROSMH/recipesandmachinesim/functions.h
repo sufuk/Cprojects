@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include "simulation.h"
 typedef struct recipe {
   char partyname[20];
   char partytype[20];
@@ -317,7 +318,7 @@ void submenusim(){
   printf("[3]Reset\n");
   printf("[4]Exit\n");
 }
-void recipeselect(FILE *file){
+/*void recipeselect(FILE *file){
   int i;
   char party_name[20];
   char party_type[20];
@@ -361,10 +362,11 @@ void recipeselect(FILE *file){
       tub2_tension = frecipe.tub2tension;
       tub2_temprature = frecipe.tub2temprature;
       tub2_elangationrate = frecipe.tub2elangationrate;
+      _machine_speed = frecipe.machine_speed;
 
     }
 
-}
+}*/
 void engine(FILE *file){
   int i = 0;
   while(i != 7){
@@ -392,13 +394,60 @@ void engine(FILE *file){
       edit_recipe(file);
     }
     else if(i == 6){//Simulation
+      char party_name[20];
+      char party_type[20];
+      int wire_number;
+      char iplikask_that[20];
+      char yarn_type[20];
+
+      int tub1_tension;
+      int tub1_temprature;
+      double tub1_elangationrate;
+
+      int tub2_tension;
+      int tub2_temprature;
+      double tub2_elangationrate;
+      int _machine_speed;
       submenusim();
       int p;
       scanf("%d", &p);
       if(p == 1){// Select a recipe
-      }
-      else if(p == 2){// start Simulation
+        int i;
+        printf("Please Enter The recipe Party Name\n");
+        scanf("%s", party_name);
+        recipe frecipe;
+        file = fopen("output.bin", "rb+");
+        while(!feof(file)){
+          if(!fread(&frecipe, sizeof(recipe), 1, file)){
+            break;
+          }
+            if(strcmp(frecipe.partyname, party_name) == 0){
+              i = 0;
+              break;
+            }
+            }
+          if(i != 0){
+            printf("\nRecipe could not found try again \n");
+          }
+          if(i == 0){
+            printf("You are gonna simulate %s\n ", frecipe.partyname);
+            strcpy(party_type, frecipe.partytype);
+            wire_number = frecipe.wirenumber;
+            strcpy(iplikask_that, frecipe.yarnNE);
+            strcpy(yarn_type, frecipe.yarntype);
+            tub1_tension = frecipe.tub1tension;
+            tub1_temprature = frecipe.tub1temprature;
+            tub1_elangationrate = frecipe.tub1elangationrate;
+            tub2_tension = frecipe.tub2tension;
+            tub2_temprature = frecipe.tub2temprature;
+            tub2_elangationrate = frecipe.tub2elangationrate;
+            _machine_speed = frecipe.machine_speed;
 
+          }
+
+      }
+      if(p == 2){// start Simulation
+      
       }
       else if(p == 3){
 
