@@ -43,7 +43,7 @@ void menu(){
   printf("[3] Add a Recipe\n");
   printf("[4] Remove a Recipe\n");
   printf("[5] Edit a Recipe\n");
-  printf("[6] Clean ALL!!!\n");
+  printf("[6] Simulation\n");
   printf("[7] Exit\n");
 }
 
@@ -310,4 +310,109 @@ printf("\nEnter the name of recipe please\n");
 
     }
     fclose(file);
+}
+void submenusim(){
+  printf("[1]Select a Recipe\n");
+  printf("[2]Start Simulation\n");
+  printf("[3]Reset\n");
+  printf("[4]Exit\n");
+}
+void recipeselect(FILE *file){
+  int i;
+  char party_name[20];
+  char party_type[20];
+  int wire_number;
+  char iplikask_that[20];
+  char yarn_type[20];
+
+  int tub1_tension;
+  int tub1_temprature;
+  double tub1_elangationrate;
+
+  int tub2_tension;
+  int tub2_temprature;
+  double tub2_elangationrate;
+  int _machine_speed;
+  printf("Please Enter The recipe Party Name\n");
+  scanf("%s", party_name);
+  recipe frecipe;
+  file = fopen("output.bin", "rb+");
+  while(!feof(file)){
+    if(!fread(&frecipe, sizeof(recipe), 1, file)){
+      break;
+    }
+      if(strcmp(frecipe.partyname, party_name) == 0){
+        i = 0;
+        break;
+      }
+      }
+    if(i != 0){
+      printf("\nRecipe could not found try again \n");
+    }
+    if(i == 0){
+      printf("You are gonna simulate %s\n ", frecipe.partyname);
+      strcpy(party_type, frecipe.partytype);
+      wire_number = frecipe.wirenumber;
+      strcpy(iplikask_that, frecipe.yarnNE);
+      strcpy(yarn_type, frecipe.yarntype);
+      tub1_tension = frecipe.tub1tension;
+      tub1_temprature = frecipe.tub1temprature;
+      tub1_elangationrate = frecipe.tub1elangationrate;
+      tub2_tension = frecipe.tub2tension;
+      tub2_temprature = frecipe.tub2temprature;
+      tub2_elangationrate = frecipe.tub2elangationrate;
+
+    }
+
+}
+void engine(FILE *file){
+  int i = 0;
+  while(i != 7){
+    menu();
+    printf("Please Select a function\n");
+    scanf("%d", &i);
+    if(i == 1){
+      //List Recipes
+      list_recipes(file);
+    }
+    else if(i == 2){
+      //Search a Recipe
+      search_recipe(file);
+    }
+    else if(i == 3){
+      //Add a Recipe
+      add_recipe(file);
+    }
+    else if(i == 4){
+      //Remove a Recipe
+      remove_recipe(file);
+    }
+    else if(i == 5){
+      //Edit a Recipe
+      edit_recipe(file);
+    }
+    else if(i == 6){//Simulation
+      submenusim();
+      int p;
+      scanf("%d", &p);
+      if(p == 1){// Select a recipe
+      }
+      else if(p == 2){// start Simulation
+
+      }
+      else if(p == 3){
+
+      }// Reset Recipe
+      else if(p == 4){// exit
+        break;
+      }
+    }
+
+    else if(i == 7){
+      break;
+    }
+    else{
+      printf("\nPlease Try Again\n");
+    }
+  }
 }
