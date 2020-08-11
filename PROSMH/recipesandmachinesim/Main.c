@@ -12,7 +12,7 @@ FILE *file;
 
 
 engine(file);
-
+//simulationscreen(100, 20);
 
   return 0;
 }

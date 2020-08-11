@@ -354,78 +354,30 @@ void temprature_bar(int temprature){
 void simtemp_machinespeed(int temprature, int machinespeed){
   if(temprature <= 0){
     if(machinespeed <=0){
-      printf("                  90    100                              _________ \n");
-      printf("             80              110                         |       | \n");
-      printf("                                                         |       | \n");
-      printf("         70                      120                     |       | \n");
-      printf("                                                         |       | \n");
-      printf("       60                          130                   |       |\n");
-      printf("                      OO                                 |       |\n");
-      printf("       50             OO          140                    |       |\n");
-      printf("                      |                                  |       |\n");
-      printf("        40            |          150                     |_______|\n");
+      printf("                  90    100             \n");
+      printf("             80              110        \n");
+      printf("                                        \n");
+      printf("         70                      120    \n");
+      printf("                                        \n");
+      printf("       60                          130  \n");
+      printf("                      OO                \n");
+      printf("       50             OO          140   \n");
+      printf("                      |                 \n");
+      printf("        40            |          150    \n");
       printf("                      |                 \n");
       printf("           30         |        160      \n");
     }
     else if(machinespeed <= 30){
-      printf("                  90    100                              _________ \n");
-      printf("             80              110                         |       |\n");
-      printf("                                                         |       |\n");
-      printf("         70                      120                     |       |\n");
-      printf("                                                         |       |\n");
-      printf("       60                          130                   |       |\n");
-      printf("                     OO                                  |       |\n");
-      printf("       50            OO           140                    |       |\n");
-      printf("                   /                                     |       |\n");
-      printf("                 /                                       |_______|\n");
-      printf("        40     /                 150    \n");
-      printf("             /                          \n");
-      printf("           30                  160      \n");
+
     }
     else if(machinespeed <=40){
-      printf("                  90    100                             _________\n");
-      printf("             80              110                        |       |\n");
-      printf("                                                        |       |\n");
-      printf("         70                      120                    |       |\n");
-      printf("                                                        |       |\n");
-      printf("       60                          130                  |       |\n");
-      printf("                     OO                                 |       |\n");
-      printf("       50            OO           140                   |       |\n");
-      printf("                   %                                    |       |\n");
-      printf("                %                                       |_______|\n");
-      printf("           40                    150     \n");
-      printf("                                        \n");
-      printf("              30             160      \n");
+
     }
     else if(machinespeed <= 50){
-      printf("                  90    100                               _________        \n");
-      printf("             80              110                          |       |      \n");
-      printf("                                                          |       |     \n");
-      printf("         70                      120                      |       |   \n");
-      printf("                                                          |       |   \n");
-      printf("       60                          130                    |       |  \n");
-      printf("                      OO                                  |       | \n");
-      printf("       50+++++++++++++OO          140                     |       |  \n");
-      printf("                                                          |       | \n");
-      printf("        40                       150                      |_______|  \n");
-      printf("                                        \n");
-      printf("           30                  160      \n");
+
     }
     else if(machinespeed <= 60){
-      printf("                  90    100                               _________        \n");
-      printf("             80              110                          |       |       \n");
-      printf("                                                          |       |     \n");
-      printf("         70                      120                      |       |   \n");
-      printf("                                                          |       |   \n");
-      printf("       60                          130                    |       | \n");
-      printf("           #                                              |       | \n");
-      printf("               ^   _                                      |       | \n");
-      printf("                     %OO                                  |       | \n");
-      printf("       50             OO          140                     |_______|  \n");
-      printf("                                        \n");
-      printf("        40                       150    \n");
-      printf("                                        \n");
-      printf("           30                  160      \n");
+
     }
     else if(machinespeed <= 70){
 

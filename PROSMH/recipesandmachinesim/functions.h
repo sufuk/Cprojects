@@ -247,7 +247,7 @@ printf("\nEnter the name of recipe please\n");
         }
         if(a == 3){
           printf("\n Enter the new Wire Number please\n");
-          scanf("%d", wire_number_new);
+          scanf("%d", &wire_number_new);
           frecipe.wirenumber = wire_number_new;
           printf("Wire Number updated sucsessfully\n");
         }
@@ -265,43 +265,43 @@ printf("\nEnter the name of recipe please\n");
         }
         if(a == 6){
           printf("\n Enter the new Tub 1 Tension please\n");
-          scanf("%d", tub1_tension_new);
+          scanf("%d", &tub1_tension_new);
           frecipe.tub1tension = tub1_tension_new;
           printf("Tub 1 Tension updated sucsessfully\n");
         }
         if(a == 7){
           printf("\n Enter the new Tub 1 Temprature please\n");
-          scanf("%d", tub1_temprature_new);
+          scanf("%d", &tub1_temprature_new);
           frecipe.tub1temprature = tub1_temprature_new;
           printf("Tub 1 Temprature updated sucsessfully\n");
         }
         if(a == 8){
           printf("\n Enter the new Tub 1 Elangaiton Rate please\n");
-          scanf("%lf", tub1_elangationrate_new);
+          scanf("%lf", &tub1_elangationrate_new);
           frecipe.tub1elangationrate = tub1_elangationrate_new;
           printf("Tub 1 Elangaiton Rate updated sucsessfully\n");
         }
         if(a == 9){
           printf("\n Enter the new Tub 2 Tension please\n");
-          scanf("%d", tub2_tension_new);
+          scanf("%d", &tub2_tension_new);
           frecipe.tub2tension = tub2_tension_new;
           printf("Tub 2 Tension updated sucsessfully\n");
         }
         if(a == 10){
           printf("\n Enter the new Tub 2 Temprature please\n");
-          scanf("%d", tub2_temprature_new);
+          scanf("%d", &tub2_temprature_new);
           frecipe.tub2temprature = tub2_temprature_new;
           printf("Tub 2 Temprature updated sucsessfully\n");
         }
         if(a == 11){
           printf("\n Enter the new Tub 2 Elangaiton Rate please\n");
-          scanf("%lf", tub2_elangationrate_new);
+          scanf("%lf", &tub2_elangationrate_new);
           frecipe.tub2elangationrate = tub2_elangationrate_new;
           printf("Tub 2 Elangaiton Rate updated sucsessfully\n");
         }
         if(a == 12){
           printf("\n Enter the new Machine Speed please\n");
-          scanf("%d", _machine_speed_new);
+          scanf("%d", &_machine_speed_new);
           frecipe.machine_speed = _machine_speed_new;
           printf("Machine Speed updated sucsessfully\n");
         }
@@ -447,7 +447,7 @@ void engine(FILE *file){
 
       }
       if(p == 2){// start Simulation
-      
+
       }
       else if(p == 3){
 
