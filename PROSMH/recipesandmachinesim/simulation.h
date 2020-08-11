@@ -1,16 +1,98 @@
 #include <stdio.h>
 //#include "functions.h"
 #include <stdlib.h>
-int a; // simulation triggerer
+#include <time.h>
+void delay(int number_of_seconds)
+{
+    // Converting time into milli_seconds
+    int milli_seconds = 1000 * number_of_seconds;
 
+    // Storing start time
+    clock_t start_time = clock();
+
+    // looping till required time is not achieved
+    while (clock() < start_time + milli_seconds)
+        ;
+}
 void machinespeed_bar(int machinespeed){
   if(machinespeed <= 0){
 
+    printf("          o  o\n");
+    printf("       o        o\n");
+    printf("      o          o\n");
+    printf("      o          o\n");
+    printf("       o        o\n");
+    printf("          o  o\n");
 
-    
-
+    delay(7);
   }
+  else if(machinespeed <= 50){
+    printf("          o  o\n");
+    printf("       o        o\n");
+    printf("      o          o\n");
+    printf("      o          o\n");
+    printf("       o        o\n");
+    printf("          o  o\n");
+    delay(7);
+    printf("        *  *\n");
+    printf("     *        *\n");
+    printf("    *          *\n");
+    printf("    *          *\n");
+    printf("     *        *\n");
+    printf("        *  *\n");
+    delay(7);
+    printf("          o  o\n");
+    printf("       o        o\n");
+    printf("      o          o\n");
+    printf("      o          o\n");
+    printf("       o        o\n");
+    printf("          o  o\n");
+  }
+  else if(machinespeed <= 70){
 
+    printf("          o  o\n");
+    printf("       o        o\n");
+    printf("      o          o\n");
+    printf("      o          o\n");
+    printf("       o        o\n");
+    printf("          o  o\n");
+    delay(5);
+    printf("        *  *\n");
+    printf("     *        *\n");
+    printf("    *          *\n");
+    printf("    *          *\n");
+    printf("     *        *\n");
+    printf("        *  *\n");
+    delay(5);
+    printf("          o  o\n");
+    printf("       o        o\n");
+    printf("      o          o\n");
+    printf("      o          o\n");
+    printf("       o        o\n");
+    printf("          o  o\n");
+  }
+    else if(machinespeed <= 100){
+      printf("          o  o\n");
+      printf("       o        o\n");
+      printf("      o          o\n");
+      printf("      o          o\n");
+      printf("       o        o\n");
+      printf("          o  o\n");
+      delay(3);
+      printf("        *  *\n");
+      printf("     *        *\n");
+      printf("    *          *\n");
+      printf("    *          *\n");
+      printf("     *        *\n");
+      printf("        *  *\n");
+      delay(3);
+      printf("          o  o\n");
+      printf("       o        o\n");
+      printf("      o          o\n");
+      printf("      o          o\n");
+      printf("       o        o\n");
+      printf("          o  o\n");
+    }
 
 }
 void temprature_bar(int temprature){

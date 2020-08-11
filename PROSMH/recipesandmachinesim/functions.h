@@ -311,38 +311,3 @@ printf("\nEnter the name of recipe please\n");
     }
     fclose(file);
 }
-
-void engine(FILE *file){
-  int i = 0;
-  while(i != 6){
-    menu();
-    printf("Please Select a function\n");
-    scanf("%d", &i);
-    if(i == 1){
-      //List Recipes
-      list_recipes(file);
-    }
-    else if(i == 2){
-      //Search a Recipe
-      search_recipe(file);
-    }
-    else if(i == 3){
-      //Add a Recipe
-      add_recipe(file);
-    }
-    else if(i == 4){
-      //Remove a Recipe
-      remove_recipe(file);
-    }
-    else if(i == 5){
-      //Edit a Recipe
-      edit_recipe(file);
-    }
-    else if(i == 6){
-      printf("\nGoodbye");
-    }
-    else{
-      printf("\nPlease Try Again\n");
-    }
-  }
-}
